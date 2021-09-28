@@ -39,7 +39,7 @@ table{
 <li><a href="index.php" title="about">Login</a></li>
 	<li><a  href = "index.php" title="Home">Home</a></li>
         <li><a href="<%=request.getContextPath()%>/InsertThreadServlet">Threads</a></li>
-        <li><a>Topics</a></li>
+        <li><a  name="Topic" href = "Topic.jsp" >Topic</a></li>
         
 </ul>
 </div>
@@ -53,11 +53,18 @@ table{
 			<th>Delete</th>
 		</tr>
 		<tbody>
+		<tr>
+			<td>user1</td>
+			<td><a name="CPUBURN" href="<%=request.getContextPath()%>/InsertPostServlet">CPU BURN</td>
+			<td>3</td>
+			<td>	2021-08-10 23:33:10.0</td>
+			<tr>
 			<c:forEach var="thread" items="${listThread}" >
 				<script>
 					console.log("${thread.thread_name}");
 					console.log("${thread.thread_id}");
 				</script>
+			
 			<tr>
 			<td><c:out value="${thread.thread_username}"/></td>
 			<td><a href="<%=request.getContextPath()%>/InsertPostServlet"><c:out value="${thread.thread_name}"/></a></td>
@@ -73,7 +80,7 @@ table{
 
 	<br>Thread Header: <br><textarea style= 'width: 500px; height: 20px;' name='thread-name' maxlength='40'></textarea>
 	<br>Thread Message:<br> <textarea style= 'width: 500px; height: 200px;' name='thread-message'></textarea>
-	<br><br><input type="submit" value="Submit Thread" />
+	<br><br><input name="submit_button" type="submit" value="Submit Thread" />
 	
 </form>
 

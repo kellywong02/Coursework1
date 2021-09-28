@@ -40,7 +40,7 @@ table{
 <li><a href="index.php" title="about">Login</a></li>
 	<li><a  href = "index.php" title="Home">Home</a></li>
         <li><a href="<%=request.getContextPath()%>/InsertThreadServlet">Threads</a></li>
-        <li><a>Topics</a></li>
+         <li><a  href = "Topic.jsp" >Topic</a></li>
         
 </ul>
 </div>
